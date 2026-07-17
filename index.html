@@ -3,10 +3,459 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Tashi Gurung</title>
+
+  <title>Tashi Gurung | AI, Data & Business</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      color: #172033;
+      background: #ffffff;
+      line-height: 1.6;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .container {
+      width: min(1120px, 90%);
+      margin: 0 auto;
+    }
+
+    header {
+      border-bottom: 1px solid #e6e9ef;
+      background: rgba(255, 255, 255, 0.95);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    nav {
+      min-height: 74px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 30px;
+    }
+
+    .logo {
+      font-size: 1.25rem;
+      font-weight: 700;
+      letter-spacing: -0.03em;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 28px;
+      list-style: none;
+      font-size: 0.95rem;
+    }
+
+    .nav-links a:hover {
+      color: #3457d5;
+    }
+
+    .hero {
+      min-height: calc(100vh - 74px);
+      display: flex;
+      align-items: center;
+      padding: 80px 0;
+      background:
+        radial-gradient(circle at 80% 20%, #eef2ff 0, transparent 28%),
+        radial-gradient(circle at 15% 80%, #f3f7ff 0, transparent 30%);
+    }
+
+    .hero-content {
+      max-width: 820px;
+    }
+
+    .eyebrow {
+      display: inline-block;
+      margin-bottom: 20px;
+      padding: 8px 14px;
+      border: 1px solid #dfe5f2;
+      border-radius: 999px;
+      color: #3457d5;
+      background: #f8faff;
+      font-size: 0.9rem;
+      font-weight: 600;
+    }
+
+    h1 {
+      font-size: clamp(3rem, 8vw, 6rem);
+      line-height: 1;
+      letter-spacing: -0.06em;
+      margin-bottom: 28px;
+    }
+
+    .hero-description {
+      max-width: 720px;
+      font-size: clamp(1.1rem, 2vw, 1.35rem);
+      color: #566074;
+      margin-bottom: 36px;
+    }
+
+    .hero-buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+    }
+
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 48px;
+      padding: 0 22px;
+      border-radius: 10px;
+      font-weight: 600;
+      transition: transform 0.2s ease;
+    }
+
+    .button:hover {
+      transform: translateY(-2px);
+    }
+
+    .button-primary {
+      background: #172033;
+      color: white;
+    }
+
+    .button-secondary {
+      border: 1px solid #ccd2df;
+      background: white;
+    }
+
+    section {
+      padding: 100px 0;
+    }
+
+    .section-heading {
+      margin-bottom: 45px;
+    }
+
+    .section-heading p {
+      color: #3457d5;
+      font-weight: 600;
+      margin-bottom: 8px;
+    }
+
+    h2 {
+      font-size: clamp(2rem, 4vw, 3.1rem);
+      letter-spacing: -0.04em;
+      line-height: 1.1;
+    }
+
+    .about-text {
+      max-width: 850px;
+      color: #566074;
+      font-size: 1.1rem;
+    }
+
+    .projects {
+      background: #f7f8fb;
+    }
+
+    .project-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 22px;
+    }
+
+    .project-card {
+      min-height: 280px;
+      padding: 30px;
+      border: 1px solid #e0e4ec;
+      border-radius: 18px;
+      background: white;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+    }
+
+    .project-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 18px 45px rgba(23, 32, 51, 0.08);
+    }
+
+    .project-card h3 {
+      font-size: 1.35rem;
+      margin-bottom: 14px;
+    }
+
+    .project-card p {
+      color: #667085;
+    }
+
+    .project-link {
+      margin-top: 28px;
+      color: #3457d5;
+      font-weight: 600;
+    }
+
+    footer {
+      padding: 38px 0;
+      border-top: 1px solid #e6e9ef;
+      color: #667085;
+    }
+
+    .footer-content {
+      display: flex;
+      justify-content: space-between;
+      gap: 25px;
+      flex-wrap: wrap;
+    }
+
+    @media (max-width: 800px) {
+      .nav-links {
+        gap: 15px;
+        font-size: 0.85rem;
+      }
+
+      .project-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .hero {
+        min-height: auto;
+      }
+    }
+
+    @media (max-width: 560px) {
+      nav {
+        align-items: flex-start;
+        flex-direction: column;
+        padding: 20px 0;
+      }
+
+      .nav-links {
+        flex-wrap: wrap;
+      }
+
+      .hero {
+        padding: 70px 0;
+      }
+
+      section {
+        padding: 75px 0;
+      }
+    }
+  </style>
 </head>
+
 <body>
-  <h1>Hi, I'm Tashi.</h1>
-  <p>AI, Data Analytics, and Business Strategy</p>
+
+  <header>
+    <nav class="container">
+      <a class="logo" href="#home">Tashi Gurung</a>
+
+      <ul class="nav-links">
+        <li><a href="#about">About</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#research">Research</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+
+    <section class="hero" id="home">
+      <div class="container">
+        <div class="hero-content">
+
+          <p class="eyebrow">
+            AI · Data Analytics · Business Strategy
+          </p>
+
+          <h1>
+            Hi, I'm Tashi.
+          </h1>
+
+          <p class="hero-description">
+            I work at the intersection of artificial intelligence, data,
+            and business—turning complex information into practical insights,
+            better processes, and stronger decisions.
+          </p>
+
+          <div class="hero-buttons">
+            <a class="button button-primary" href="#projects">
+              View My Work
+            </a>
+
+            <a
+              class="button button-secondary"
+              href="https://github.com/ttashi7"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Visit GitHub
+            </a>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <section id="about">
+      <div class="container">
+
+        <div class="section-heading">
+          <p>About Me</p>
+          <h2>Connecting technology with business value.</h2>
+        </div>
+
+        <p class="about-text">
+          I am an MBA graduate and doctoral student specializing in information
+          technology and artificial intelligence. My interests include data
+          analytics, AI adoption, business intelligence, process automation,
+          and responsible data governance.
+        </p>
+
+      </div>
+    </section>
+
+    <section class="projects" id="projects">
+      <div class="container">
+
+        <div class="section-heading">
+          <p>Selected Work</p>
+          <h2>Projects and practical experience.</h2>
+        </div>
+
+        <div class="project-grid">
+
+          <article class="project-card">
+            <div>
+              <h3>Leadership Memphis Data Analytics</h3>
+              <p>
+                Supporting data organization, enrichment, automation,
+                and dashboard development for more informed decision-making.
+              </p>
+            </div>
+            <a class="project-link" href="#">
+              Details coming soon →
+            </a>
+          </article>
+
+          <article class="project-card">
+            <div>
+              <h3>Power BI Projects</h3>
+              <p>
+                Interactive dashboards designed to communicate trends,
+                performance indicators, and actionable business insights.
+              </p>
+            </div>
+            <a
+              class="project-link"
+              href="https://github.com/ttashi7/PowerBI-Projects"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              View repository →
+            </a>
+          </article>
+
+          <article class="project-card">
+            <div>
+              <h3>Machine Learning Projects</h3>
+              <p>
+                Applied machine-learning work involving data preparation,
+                modeling, evaluation, and interpretation.
+              </p>
+            </div>
+            <a
+              class="project-link"
+              href="https://github.com/ttashi7/MLProjects"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              View repository →
+            </a>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <section id="research">
+      <div class="container">
+
+        <div class="section-heading">
+          <p>Research</p>
+          <h2>Data governance and responsible AI adoption.</h2>
+        </div>
+
+        <p class="about-text">
+          My doctoral research explores the role of data governance in
+          artificial intelligence adoption among small and medium-sized
+          organizations.
+        </p>
+
+      </div>
+    </section>
+
+    <section id="contact">
+      <div class="container">
+
+        <div class="section-heading">
+          <p>Contact</p>
+          <h2>Let's connect.</h2>
+        </div>
+
+        <p class="about-text">
+          I am interested in opportunities involving AI, analytics,
+          business intelligence, strategy, and technology-driven
+          organizational improvement.
+        </p>
+
+        <div class="hero-buttons" style="margin-top: 30px;">
+          <a
+            class="button button-primary"
+            href="https://www.linkedin.com/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            LinkedIn
+          </a>
+
+          <a
+            class="button button-secondary"
+            href="https://github.com/ttashi7"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            GitHub
+          </a>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    <div class="container footer-content">
+      <p>© 2026 Tashi Gurung</p>
+      <p>Built with GitHub Pages</p>
+    </div>
+  </footer>
+
 </body>
 </html>
